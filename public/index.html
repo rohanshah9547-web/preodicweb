@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Periodic | Element Explorer</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/">
+      <span class="brand-icon">P</span>
+      PERIODIC<span class="accent">.</span>
+    </a>
+    <span class="tag">118 ELEMENTS · C POWERED</span>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow">THE ELEMENT EXPLORER</p>
+      <h1>Explore the building<br>blocks of <span>everything.</span></h1>
+      <p class="subtitle">
+        Search the periodic table and discover chemical elements.
+        Powered by a C backend and DSA.
+      </p>
+
+      <form id="searchForm" class="search-box">
+        <span class="search-icon">⌕</span>
+        <input id="searchInput"
+          placeholder="Search Oxygen, Fe, or atomic number 8..."
+          autocomplete="off">
+        <button type="submit">Search</button>
+      </form>
+
+      <p id="status" class="status">Connecting to C backend...</p>
+    </section>
+
+    <section id="detail" class="detail hidden">
+      <div class="detail-symbol" id="detailSymbol">O</div>
+      <div class="detail-info">
+        <p class="eyebrow">ELEMENT DETAILS</p>
+        <h2 id="detailName">Oxygen</h2>
+        <p id="detailMeta"></p>
+        <div class="detail-stats">
+          <div><small>ATOMIC NUMBER</small><strong id="detailNumber"></strong></div>
+          <div><small>ATOMIC MASS</small><strong id="detailMass"></strong></div>
+          <div><small>CATEGORY</small><strong id="detailCategory"></strong></div>
+        </div>
+      </div>
+      <button id="closeDetail" class="close-btn" aria-label="Close details">×</button>
+    </section>
+
+    <section class="table-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">THE ELEMENTS</p>
+          <h2>Periodic table</h2>
+        </div>
+        <span id="count" class="count">Loading...</span>
+      </div>
+
+      <div class="toolbar">
+        <input id="filterInput" placeholder="Filter visible elements...">
+        <select id="categoryFilter">
+          <option value="">All categories</option>
+        </select>
+        <select id="sortSelect">
+          <option value="number">Atomic number</option>
+          <option value="mass">Atomic mass</option>
+          <option value="name">Name A–Z</option>
+        </select>
+      </div>
+
+      <div id="periodicGrid" class="periodic-grid"></div>
+      <p id="emptyMessage" class="empty hidden">No matching elements found.</p>
+    </section>
+
+    <footer>
+      <span>PERIODIC. — Student DSA Lab Project</span>
+      <span>Built with C · HTML · CSS · JavaScript</span>
+    </footer>
+  </main>
+</body>
+</html>
+
